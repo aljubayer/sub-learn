@@ -1,0 +1,108 @@
+#main-menu.sm-simple {
+    @extend %bgc-primary;
+    display: inline-block;
+    border: none;
+    box-shadow: none;
+    
+    a, a:hover, a:focus, a:active, a.highlighted{
+        @extend %bgc-transparent;
+        -webkit-transition: .5s;
+        -o-transition: .5s;
+        transition: .5s;
+    }
+    a:hover, a:focus, a:active, a.highlighted{
+        @extend %color-secondary;
+        transition: .5s;
+    }
+
+
+
+    ul {
+        border: none;
+        box-shadow: none;
+
+        >li{            
+            // border-bottom: 1px solid red;  
+
+        }
+    }
+
+    > li {
+        border: none;
+        padding: 0 20px;
+            
+        .sub-arrow{
+            opacity: 1;
+            visibility: visible;
+            position: unset;
+            margin-left: 10px;
+        }
+
+        &:not(.more-items-indicator){
+            position: relative;
+            a{
+                position: relative;
+                &:after{
+                      content: "";
+                      position: absolute;
+                      z-index: 2;
+                      right: -20px;
+                      width: 0;
+                      bottom: 10px;
+                      background: $cx-secondary-color;
+                      height: 2px;
+                      transition-property: width;
+                      transition-duration: 0.3s;
+                      transition-timing-function: ease-out;        
+                }
+
+                &:hover:after,
+                &:focus:after,
+                &:active:after {
+                  left: -20px;
+                  right: auto;
+                  width: calc(100% + 40px);
+                }
+            }
+        }
+
+        &:not(.more-items-indicator)::after{
+            position: absolute;
+            content: '';
+            right: 0;
+            width: 1px;
+            height: 20px;
+            background: $cx-secondary-color;
+            top: 50%;
+            transform: translateY(-50%);
+
+        }
+
+        &:last-child{
+            padding: 0;            
+        }
+
+        > a{
+            line-height: 64px;
+            padding: 0;
+        }
+    }
+    .more-items-indicator {
+        > a{
+
+            padding: 0 5px;
+            max-height: 64px;
+            .sub-arrow{
+                opacity: 0;
+                visibility: none;
+            }
+
+            i{
+                line-height: 64px;
+                height: 64px;
+                
+            }
+        }
+    }
+
+}

@@ -1,0 +1,6 @@
+.site-brand{
+	
+	height: 100px;
+	width: 100%;
+	@include cx-flex-column-center;
+}
