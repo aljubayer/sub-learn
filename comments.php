@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying comments// test comment for sub repo
+ * The template for displaying comments// test comment dev-2-branch
  *
  * @package Codexin
  * @subpackage Template
