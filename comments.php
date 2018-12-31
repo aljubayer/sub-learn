@@ -13,6 +13,7 @@
  */
 if ( post_password_required() ) {
 	return;
+//this is test comment to check conflict
 }
 ?>
 
